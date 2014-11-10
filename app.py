@@ -5,20 +5,24 @@ app=Flask(__name__)
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return "hi"
+    #return render_template("index.html")
 
-#obvs doesnt work yet
-@app.route("/results")
-@app.route("/results/<movie>")
-def results(movie="Dynamite"):
-    url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=re8z35f3uhrea4vc46jz4wcg"
-    url = url%q(movie)
+#weird urllib2 error
+@app.route("/q")
+@app.route("/q/<query>")
+def q(query="Dynamite"):
+    url = "http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=re8z35f3uhrea4vc46jz4wcg&q=%s"
+    url = url%(query)
     request = urlllib2.urlopen(url)
     result = request.read()
     d = json.loads(result)
     page = ""
+    for r in d['movies']:
+        if 'ratings' in r.keys():
+            page = page + (r['ratings'][0])#returns critics score
     return page
 
 if __name__=="__main__":
    app.debug=True
-   app.run(host="0.0.0.0",port=8000)
+   app.run()
