@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Error</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+<style type="text/css">
+   body{
+   background-color: #003333;
+   }   
+   h1{
+   color: #339965;
+   font-size:48px;
+   text-align: center;
+   margin-top:15%;
+   } 
+   h2{
+   color: #339965;
+   font-size:14px;
+   text-align: center;
+   } 
+   button{
+   margin:5px auto;
+</style>
+</head>
+
+<body>
+<h1>Error: movie not found in database</h1>
+<h2>Try a different combination</h2>
+</body>
+
+</html>
