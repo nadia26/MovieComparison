@@ -7,6 +7,8 @@
 <style type="text/css">
    body{
    background-color: #339965;
+   color: #006632;
+
    }   
    h1{
    color: #66CC98;
@@ -26,8 +28,18 @@
 <body>
   <div class="pure-g">
     <div class="pure-u-1-1"><h1>The winner is <i>{{winner}}</i>!</h1></div>
-    <div class="pure-u-1-2"><h2>{{winner}}</h2></div>
-    <div class="pure-u-1-2"><h2>{{loser}}</h2></div>
+
+    <div class="pure-u-1-2"><h2>{{winner}}</h2>
+      <center>average score: {{winner_score}}</center>
+      <center>critics' score: {{winner_cr}}</center>
+      <center>audience score: {{winner_ar}}</center></div>
+
+    <div class="pure-u-1-2"><h2>{{loser}}</h2>
+      <center>average score: {{loser_score}}</center>
+      <center>critics' score: {{loser_cr}}</center>
+      <center>audience score: {{loser_ar}}</center></div>
+
+    <div class="pure-u-1-1"><br><center><a href="/">Try a different combination</a></center><br></div>
   </div>
 </body>
 

@@ -19,12 +19,20 @@ def index():
 
 @app.route("/q/<movie1>&<movie2>", methods=["GET","POST"])
 def q(movie1=None, movie2=None):
-    movie1_rating = get_rating(movie1)
-    movie2_rating = get_rating(movie2)
-    if ((movie1_rating==999)or(movie2_rating==999)):
+    movie1_ratings = get_rating(movie1)
+    movie2_ratings = get_rating(movie2)
+    if ((movie1_ratings==999)or(movie2_ratings==999)):
         return render_template("error.html")#movie not found
-    winner = get_winner(movie1_rating, movie2_rating, movie1, movie2)
-    return render_template("results.html", winner=winner[0], loser=winner[1])#can do so much more with this...
+    results = get_winner(movie1_ratings, movie2_ratings, movie1, movie2)
+    return render_template("results.html", 
+                           winner=results[0], 
+                           winner_score=results[1][0],
+                           winner_cr=results[1][1],
+                           winner_ar=results[1][2],
+                           loser=results[2], 
+                           loser_score=results[3][0], 
+                           loser_cr=results[3][1], 
+                           loser_ar=results[3][2])
 
 if __name__=="__main__":
    app.debug=True
