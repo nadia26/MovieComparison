@@ -7,14 +7,14 @@ app=Flask(__name__)
 def index():
     if request.method=="GET":
         return render_template("index.html", msg="")
-    else:
+    if request.method=="POST":
+        print("yo")
         m1 = request.form["movie1"]
         m2 = request.form["movie2"]
         button = request.form["b"]
-        if ((button == "Submit") and (m1!="") and (m2!="")):
+        if ( (button=="Submit") and (m1!="") and (m2!="") ):
             return redirect(url_for('q', movie1=m1, movie2=m2))
-        else:
-            return render_template("index.html", msg="Enter movies!")
+        return render_template("index.html", msg="Enter movies!")
             
 
 @app.route("/q/<movie1>&<movie2>", methods=["GET","POST"])
