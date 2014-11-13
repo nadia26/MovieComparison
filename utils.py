@@ -8,6 +8,8 @@ def find_RT(movie):
     request = urllib2.urlopen(url)
     result = request.read()
     d = json.loads(result)
+    if len(d['movies']) == 0:
+        return "not found"
     a = d['movies'][0]
     for r in d['movies']:
         if r['title'].upper() == movie:
