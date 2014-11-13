@@ -29,9 +29,14 @@ def avg_rtng(m):
     return (m['RTC'] + m['RTA']) / 2
 
 def get_thumb(movie):
-    if 'posters' in movie.keys():
+    if 'posters' in movie.keys() and 'thumbnail' in movie['posters'].keys():
         return movie['posters']['thumbnail']
     return ""
+
+def get_link(movie):
+    if 'links' in movie.keys() and 'alternate' in movie['links'].keys():
+        return movie['links']['alternate']
+    return "http://www.rottentomatoes.com/"
 
 def get_winner(m1, m2):
     if m1['avg'] > m2['avg']:

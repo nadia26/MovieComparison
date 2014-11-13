@@ -38,6 +38,8 @@ def q(movie1=None, movie2=None):
     winner = utils.get_winner(m1_ratings,m2_ratings)
     tb1 = utils.get_thumb(m1RT)
     tb2 = utils.get_thumb(m2RT)
+    l1 = utils.get_link(m1RT)
+    l2 = utils.get_link(m2RT)
     return render_template("results.html",
                            winner = winner,
                            movie1 = movie1,
@@ -45,7 +47,9 @@ def q(movie1=None, movie2=None):
                            m1_ratings = m1_ratings, 
                            m2_ratings=m2_ratings, 
                            tb1 = tb1, 
-                           tb2 = tb2)
+                           tb2 = tb2, 
+                           l1 = l1, 
+                           l2 = l2)
 
 if __name__=="__main__":
    app.debug=True
