@@ -1,6 +1,8 @@
-api-project-fish-nadia
+MovieComparison
 ======================
 
-NikolasKage: The Actor Comparison Site
+Nadia Saleh, Fish Milnikiewicz
 
-use this for color scheme [on 216 bit palette simulation mode]: http://paletton.com/#uid=1330u0km9ncckxYhMryqiiYvvdy
+Uses Rotten Tomatoes APIs to compare two movies' ratings
+
+(used this for color scheme [on 216 bit palette simulation mode]: http://paletton.com/#uid=1330u0km9ncckxYhMryqiiYvvdy)
